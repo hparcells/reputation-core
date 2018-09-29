@@ -39,6 +39,3 @@ exports.onLoad = api => {
 };
 
 ```
-
-## Documentation
-todo
