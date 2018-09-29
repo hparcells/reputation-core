@@ -1,8 +1,8 @@
 # Reputation Core
 ![npm](https://img.shields.io/npm/v/reputation-core.svg)
 [![npm](https://img.shields.io/npm/dt/reputation-core.svg)](https://www.npmjs.com/package/reputation-core)
-![license](https://img.shields.io/github/license/imdaveead/reputationCore.svg)
-![GitHub issues](https://img.shields.io/github/issues/imdaveead/reputationCore.svg)
+![license](https://img.shields.io/github/license/hparcells/reputation-core.svg)
+![GitHub issues](https://img.shields.io/github/issues/hparcells/reputation-core.svg)
 
 
 A transformed version of the module handler from the [Reputation Bot](https://github.com/Filip9696/reputation).
