@@ -1,0 +1,40 @@
+{
+  "_from": "reputation-core",
+  "_id": "reputation-core@1.0.6",
+  "_inBundle": false,
+  "_integrity": "sha1-zkAo7POCTAwjKM96hD6qoeIDKXY=",
+  "_location": "/reputation-core",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "tag",
+    "registry": true,
+    "raw": "reputation-core",
+    "name": "reputation-core",
+    "escapedName": "reputation-core",
+    "rawSpec": "",
+    "saveSpec": null,
+    "fetchSpec": "latest"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "http://registry.npmjs.org/reputation-core/-/reputation-core-1.0.6.tgz",
+  "_shasum": "ce4028ecf3824c0c2328cf7a843eaaa1e2032976",
+  "_spec": "reputation-core",
+  "_where": "C:\\Users\\Hunter Parcells\\Documents\\NPM Projects",
+  "author": {
+    "name": "ImDaveead"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "discord.js": "^11.3.0",
+    "require-reload": "^0.2.2"
+  },
+  "deprecated": "deprecated",
+  "description": "A discord bot framework based on modules.",
+  "license": "MIT",
+  "main": "reputationCore.js",
+  "name": "reputation-core",
+  "version": "1.0.6"
+}
