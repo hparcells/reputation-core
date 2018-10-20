@@ -1,4 +1,7 @@
 # Reputation Core
+![status](https://img.shields.io/badge/status-completed-brightgreen.svg)
+![maintained](https://img.shields.io/badge/maintained-no%20(as%20of%202018)-red.svg)
+
 ![npm](https://img.shields.io/npm/v/reputation-core.svg)
 [![npm](https://img.shields.io/npm/dt/reputation-core.svg)](https://www.npmjs.com/package/reputation-core)
 ![license](https://img.shields.io/github/license/hparcells/reputation-core.svg)
