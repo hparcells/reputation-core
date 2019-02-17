@@ -1,0 +1,44 @@
+{
+    "docs": [
+        {
+            "location": "/",
+            "text": "Reputation Core Documentation\n\u00b6\n\n\nReputation core is a transformed version of the module handler from Reputation Bot made by \nFilip Kin\n and is now an npm \nmodule to handle any discord bot. ReputationCore is built off of \nDiscord.js\n.\n\n\nGetting Started\n\u00b6\n\n\nTo get started, see the \nSimple Usage\n page, or optionally, if you use a prefix to make things easier, use the \nAdvanced Usage\n guide.\n\n\nCompleted Project\n\u00b6\n\n\nThe completed status of this project means I will not be actively developing this, and I will not be fixing small bugs, and responding to pull requests and issues represented by the maintained badge.",
+            "title": "Home"
+        },
+        {
+            "location": "/#reputation-core-documentation",
+            "text": "Reputation core is a transformed version of the module handler from Reputation Bot made by  Filip Kin  and is now an npm \nmodule to handle any discord bot. ReputationCore is built off of  Discord.js .",
+            "title": "Reputation Core Documentation"
+        },
+        {
+            "location": "/#getting-started",
+            "text": "To get started, see the  Simple Usage  page, or optionally, if you use a prefix to make things easier, use the  Advanced Usage  guide.",
+            "title": "Getting Started"
+        },
+        {
+            "location": "/#completed-project",
+            "text": "The completed status of this project means I will not be actively developing this, and I will not be fixing small bugs, and responding to pull requests and issues represented by the maintained badge.",
+            "title": "Completed Project"
+        },
+        {
+            "location": "/simple-usage/",
+            "text": "Simple Usage\n\u00b6\n\n\nMake sure to run \nnpm install reputation-core\n to install the module, and require it using \nconst BotCore = require('reputation-core');\n. Below is an example index.js.\n\n\nindex.js\n\n\nconst\n \nBotCore\n \n=\n \nrequire\n(\n\"reputation-core\"\n);\n\n\n\nlet\n \nbot\n \n=\n \nnew\n \nBotCore\n({\nmodulePath\n:\n \n\"modules\"\n,\n \ntoken\n:\n \n\"ABCDEF\"\n});\n\n\n\nbot\n.\non\n(\n'ready'\n,\n \n()\n \n=>\n \n{\n\n    \nconsole\n.\nlog\n(\n\"Logged in as ${bot.client.user.tag}\"\n);\n\n\n});\n\n\n\n\n\n\nWhere modulePath is the path to all the command modules, and token is your bot token. \nKeep your token secret and use a module such as dotenv or something similar!\n\n\n\n\nBelow is an example module file inside of the modules folder.\n\n\nmodules/ping.mod.js\n\n\nexports\n.\nid\n \n=\n \n\"ping\"\n;\n\n\nexports\n.\nonLoad\n \n=\n \napi\n \n=>\n \n{\n\n    \napi\n.\ncommands\n.\nadd\n(\n\"ping\"\n,\n \n(\nmsg\n)\n \n=>\n \n{\n\n        \nmsg\n.\nchannel\n.\nsend\n(\n':ping_pong: Pong!'\n);\n\n    \n});\n\n\n};\n\n\n\n\n\n\nBe sure to have the \n.mod.js\n file extenstion.",
+            "title": "Simple Usage"
+        },
+        {
+            "location": "/simple-usage/#simple-usage",
+            "text": "Make sure to run  npm install reputation-core  to install the module, and require it using  const BotCore = require('reputation-core'); . Below is an example index.js.  index.js  const   BotCore   =   require ( \"reputation-core\" );  let   bot   =   new   BotCore ({ modulePath :   \"modules\" ,   token :   \"ABCDEF\" });  bot . on ( 'ready' ,   ()   =>   { \n     console . log ( \"Logged in as ${bot.client.user.tag}\" );  });   Where modulePath is the path to all the command modules, and token is your bot token.  Keep your token secret and use a module such as dotenv or something similar!   Below is an example module file inside of the modules folder.  modules/ping.mod.js  exports . id   =   \"ping\" ;  exports . onLoad   =   api   =>   { \n     api . commands . add ( \"ping\" ,   ( msg )   =>   { \n         msg . channel . send ( ':ping_pong: Pong!' ); \n     });  };   Be sure to have the  .mod.js  file extenstion.",
+            "title": "Simple Usage"
+        },
+        {
+            "location": "/advanced-usage/",
+            "text": "Advanced Usage\n\u00b6\n\n\nIf you are using a prefix for your bot such as \n!\n or \np!\n, you could consider using a separate JSON file for storing this. The below is an example of how to do this.\n\n\nindex.js\n\n\nconst\n \nBotCore\n \n=\n \nrequire\n(\n\"reputation-core\"\n);\n\n\nconst\n \nfs\n \n=\n \nrequire\n(\n\"fs\"\n);\n\n\n\nlet\n \nconfig\n \n=\n \nObject\n.\nassign\n({\n\n    \nmodulePath\n:\n \n\"modules\"\n,\n\n    \ntoken\n:\n \n\"ABCDEF\"\n\n\n},\n \nJSON\n.\nparse\n(\nfs\n.\nreadFileSync\n(\n\"config.json\"\n)));\n\n\nlet\n \nbot\n \n=\n \nnew\n \nBotCore\n(\nconfig\n);\n\n\n\nbot\n.\non\n(\n'ready'\n,\n \n()\n \n=>\n \n{\n\n    \nconsole\n.\nlog\n(\n\"Logged in as ${bot.client.user.tag}\"\n);\n\n\n});\n\n\n\n\n\n\nconfig.json\n\n\n{\n\n    \n\"commandPrefix\"\n:\n \n\"!\"\n\n\n}\n\n\n\n\n\n\nNow all the commands you add will detect the prefix.",
+            "title": "Advanced Usage"
+        },
+        {
+            "location": "/advanced-usage/#advanced-usage",
+            "text": "If you are using a prefix for your bot such as  !  or  p! , you could consider using a separate JSON file for storing this. The below is an example of how to do this.  index.js  const   BotCore   =   require ( \"reputation-core\" );  const   fs   =   require ( \"fs\" );  let   config   =   Object . assign ({ \n     modulePath :   \"modules\" , \n     token :   \"ABCDEF\"  },   JSON . parse ( fs . readFileSync ( \"config.json\" )));  let   bot   =   new   BotCore ( config );  bot . on ( 'ready' ,   ()   =>   { \n     console . log ( \"Logged in as ${bot.client.user.tag}\" );  });   config.json  { \n     \"commandPrefix\" :   \"!\"  }   Now all the commands you add will detect the prefix.",
+            "title": "Advanced Usage"
+        }
+    ]
+}
